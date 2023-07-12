@@ -3,7 +3,7 @@
 
 ---
 
-Unofficial ChatGPT in Facebook Messenger in Node.js made using [ChatGPT Unofficial API](https://github.com/transitive-bullshit/chatgpt-api).
+Unofficial ChatGPT in Facebook Messenger made using [ChatGPT Unofficial API](https://github.com/transitive-bullshit/chatgpt-api) in Node.js.
 <br><br>
 - Implemented some bot interactions such as marking messages as seen and typing indicators.
 <br><br>
