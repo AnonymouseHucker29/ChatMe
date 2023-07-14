@@ -1,6 +1,10 @@
 # <div align="center">ChatMe</div>
 ***<div align="center">ChatGPT but as a Facebook Messenger bot.</div>***
 
+<div align="center">
+  <img src="https://www.codefactor.io/repository/github/anonymousehucker29/chatme/badge" alt="CodeFactor">
+</div>
+
 ---
 
 Unofficial ChatGPT in Facebook Messenger made using [ChatGPT Unofficial API](https://github.com/transitive-bullshit/chatgpt-api) in Node.js.
