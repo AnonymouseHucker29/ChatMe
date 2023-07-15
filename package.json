@@ -6,7 +6,7 @@
   "main": "src/main.js",
   "scripts": {
     "start": "node --experimental-modules src/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-modules src/handlers/misc/test.js"
   },
   "author": "Brent Baylon",
   "license": "ISC",
