@@ -1,4 +1,4 @@
-import { sendTypingOff } from "./typingAndSeenIndicator.js"
+import { sendTypingOff } from "./misc/typingAndSeenIndicator.js"
 
 export async function callSendAPI(sender_psid, response) {
 
