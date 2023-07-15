@@ -15,7 +15,7 @@ Unofficial ChatGPT in Facebook Messenger made using [ChatGPT Unofficial API](htt
 <br><br>
 - Get responses from the bot even **without** mobile data connection!
 <br><br>
-*Note: This feature works if and only if you can access [free.facebook.com](free.facebook.com) without internet connection. If you can, then you can use the bot without internet connection.*
+*Note: This feature works if and only if you can access [free.facebook.com](https://free.facebook.com) without internet connection. If you can, then you can use the bot without internet connection.*
 <br><br>
 - Implemented conversation tracking so that the bot can remember the conversation.
 <br><br>
