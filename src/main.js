@@ -4,7 +4,7 @@ import body_parser from 'body-parser'
 //import fetch from 'node-fetch' // Uncomment this line if you are using node version < 16
 import { ChatGPTUnofficialProxyAPI } from 'chatgpt'
 import { callSendAPI } from './handlers/sendAPI.js'
-import { markMessageAsSeen, showTypingIndicator } from './handlers/misc/typingAndSeenIndicator.js'
+import { markMessageAsSeen, showTypingIndicator } from './misc/typingAndSeenIndicator.js'
 
 dotenv.config();
 
