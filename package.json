@@ -6,7 +6,7 @@
   "main": "src/main.js",
   "scripts": {
     "start": "node --experimental-modules src/main.js",
-    "test": "node --experimental-modules src/handlers/misc/test.js"
+    "test": "node --experimental-modules src/misc/test.js"
   },
   "author": "Brent Baylon",
   "license": "ISC",
