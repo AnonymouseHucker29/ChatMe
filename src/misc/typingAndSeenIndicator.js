@@ -1,9 +1,10 @@
-export async function showTypingIndicator(sender_psid) {
-    let request_body = {
+export async function showTypingIndicator(sender_psid, received_message) {
+    const request_body = {
         "recipient": {
             "id": sender_psid
         },
-        "sender_action": "typing_on"
+        "sender_action": "typing_on",
+        "message_id": received_message.mid
     };
 
     try {
@@ -22,13 +23,13 @@ export async function showTypingIndicator(sender_psid) {
     }
 }
 
-export async function markMessageAsSeen(sender_psid, message_id) {
+export async function markMessageAsSeen(sender_psid, received_message) {
     const request_body = {
-        recipient: {
-            id: sender_psid,
+        "recipient": {
+            "id": sender_psid,
         },
-        sender_action: 'mark_seen',
-        message_id: message_id,
+        "sender_action": 'mark_seen',
+        "message_id": received_message.mid,
     };
 
     try {
@@ -45,7 +46,7 @@ export async function markMessageAsSeen(sender_psid, message_id) {
 }
 
 export async function sendTypingOff(sender_psid) {
-    let request_body = {
+    const request_body = {
         "recipient": {
             "id": sender_psid
         },

@@ -1,7 +1,6 @@
 import dotenv from 'dotenv'
 import express from 'express'
 import body_parser from 'body-parser'
-//import fetch from 'node-fetch' // Uncomment this line if you are using node version < 16
 import { ChatGPTUnofficialProxyAPI } from 'chatgpt'
 import { callSendAPI } from './handlers/sendAPI.js'
 import { markMessageAsSeen, showTypingIndicator } from './misc/typingAndSeenIndicator.js'
@@ -37,7 +36,7 @@ app.post('/webhook', (req, res) => {
             if (webhook_event.message) {
                 await handleMessage(sender_psid, webhook_event.message);
             } else if (webhook_event.postback) {
-                // Handle postbacks (to be implemented)
+                // Handle postbacks
             }
         });
         res.status(200).send('EVENT_RECEIVED');
@@ -46,19 +45,18 @@ app.post('/webhook', (req, res) => {
     }
 });
 
-async function handleMessage(sender_psid, received_message, message_id) {
+async function handleMessage(sender_psid, received_message) {
 
     if (received_message.is_echo) {
         return;
     }
 
-    let response;
-
     if (received_message && received_message.text) {
 
+        let response;
         const prompt = received_message.text;
 
-        await markMessageAsSeen(sender_psid, message_id);
+        await markMessageAsSeen(sender_psid, received_message.mid);
         await showTypingIndicator(sender_psid, received_message.mid);
 
         const chatGPTResponse = await chatGPTAPI.sendMessage(prompt, {
