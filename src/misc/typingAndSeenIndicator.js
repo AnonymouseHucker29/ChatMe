@@ -11,15 +11,15 @@ export async function showTypingIndicator(sender_psid, received_message) {
         await fetch(
             `https://graph.facebook.com/v2.6/me/messages?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
             {
-                method: 'POST',
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify(request_body),
             }
         )
     } catch (err) {
-        console.error('Error sending typing indicator:', err)
+        console.error("Error sending typing indicator:", err)
     }
 }
 
@@ -28,20 +28,20 @@ export async function markMessageAsSeen(sender_psid, received_message) {
         "recipient": {
             "id": sender_psid,
         },
-        "sender_action": 'mark_seen',
+        "sender_action": "mark_seen",
         "message_id": received_message.mid,
     }
 
     try {
         await fetch(`https://graph.facebook.com/v2.6/me/messages?access_token=${process.env.PAGE_ACCESS_TOKEN}`, {
-            method: 'POST',
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(request_body),
         })
     } catch (err) {
-        console.error('Error marking message as seen:', err)
+        console.error("Error marking message as seen:", err)
     }
 }
 
@@ -57,14 +57,14 @@ export async function sendTypingOff(sender_psid) {
         await fetch(
             `https://graph.facebook.com/v2.6/me/messages?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
             {
-                method: 'POST',
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify(request_body),
             }
         );
     } catch (err) {
-        console.error('Error sending typing off event:', err)
+        console.error("Error sending typing off event:", err)
     }
 }
