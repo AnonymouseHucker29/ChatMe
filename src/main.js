@@ -17,21 +17,6 @@ const chatGPTAPI = new ChatGPTUnofficialProxyAPI({
 
 let conversationId, parentMessageId
 
-app.get("/messaging-webhook", (req, res) => {
-    let mode = req.query["hub.mode"]
-    let token = req.query["hub.verify_token"]
-    let challenge = req.query["hub.challenge"]
-
-    if (mode && token) {
-        if (mode === "subscribe" && token === process.env.PAGE_ACCESS_TOKEN) {
-            console.log("WEBHOOK_VERIFIED")
-            res.status(200).send(challenge)
-        } else {
-            res.sendStatus(403)
-        }
-    }
-})
-
 app.post('/webhook', (req, res) => {
     let body = req.body
 
